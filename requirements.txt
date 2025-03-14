@@ -1,0 +1,5 @@
+
+pandas version== 2.2.2
+matplotlib version== 3.10.0
+seaborn version== 0.13.2
+Streamlit==1.43.2
