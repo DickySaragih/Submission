@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import urllib.request
 import matplotlib.pyplot as plt
+import seaborn as sns
 import os
 
 github_url = "https://raw.githubusercontent.com/DickySaragih/Submission/main/dashboard/main_data.csv"
