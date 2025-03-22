@@ -15,9 +15,6 @@ else:
 
 df = pd.read_csv(file_path)
 
-st.title("Dashboard Peminjaman Sepeda")
-st.write(df.head())  # Menampilkan 5 baris pertama data
-
 main_data = pd.read_csv("main_data.csv")
 
 st.sidebar.title("Filter Data")
