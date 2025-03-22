@@ -3,6 +3,19 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+file_path = "main_data.csv"
+
+# Periksa apakah file sudah ada, jika tidak, unduh dari GitHub
+if not os.path.exists(file_path):
+    urllib.request.urlretrieve(github_url, file_path)
+    print("File berhasil diunduh!")
+else:
+    print("File sudah ada.")
+
+# Baca file CSV setelah dipastikan tersedia
+df = pd.read_csv(file_path)
+
+
 main_data = pd.read_csv("main_data.csv")
 
 st.sidebar.title("Filter Data")
