@@ -71,9 +71,12 @@ with col2:
 # --- Visualisasi Interaktif ---
 st.subheader("Rata-rata Pengguna Terdaftar per Hari dalam Seminggu")
 fig, ax = plt.subplots(figsize=(10, 5))
-sns.barplot(data=df_filtered_month.groupby(df_filtered_month['dteday'].dt.dayofweek)['registered'].mean().reset_index(), x='dteday', y='registered', palette=['#FFDDC1', '#FFABAB', '#FFC3A0', '#D5AAFF', '#85E3FF', '#B9FBC0', '#F3FFE3'], ax=ax)
+weekly_data = df_filtered_month.groupby(df_filtered_month['dteday'].dt.dayofweek)['registered'].mean().reset_index()
+weekly_data = weekly_data.sort_values(by='dteday')
+sns.barplot(data=weekly_data, x='dteday', y='registered', color='blue', ax=ax)
 ax.set_xlabel('Hari dalam Seminggu (0=Senin, 6=Minggu)')
 ax.set_ylabel('Rata-rata Jumlah Pengguna Terdaftar')
+ax.set_xticklabels(['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'])
 st.pyplot(fig)
 
 st.markdown("\n\n")
